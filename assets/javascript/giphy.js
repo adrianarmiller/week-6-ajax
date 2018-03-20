@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    const qiphyURL = "http://api.giphy.com/v1/gifs/search?q=";
+    const qiphyURL = "https://api.giphy.com/v1/gifs/search?q=";
     const apiKey = "q9vGOgJfe8S2X6UNLksPV5RZRucD48OX";
 
     let topics = ["apples", "peaches", "pears"];
