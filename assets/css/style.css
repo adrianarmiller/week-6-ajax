@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+}
+
+#large {
+    font-size:50px;
+}
+
+#giphy-input{
+    margin: 10px;
+}
+
+#search-bttns {
+    margin: 15px;
+    display: inline-block;
+    /*get images to appear next to one another*/
+}
+
+#fav {
+    margin-top: 15px;
+}
+
+.show-giphy {
+    
+}
+
+.giphy-search-bttn {
+
+}
