@@ -10,20 +10,14 @@ body {
     margin: 10px;
 }
 
-#search-bttns {
-    margin: 15px;
-    display: inline-block;
-    /*get images to appear next to one another*/
-}
-
 #fav {
-    margin-top: 15px;
-}
-
-.show-giphy {
-    
+    margin-top: 30px;
+    border-radius: 12px;
+    background-color: #cc6666;
+    font-size: 15px;
+    color: white;
 }
 
 .giphy-search-bttn {
-
+    margin: 15px;
 }

@@ -118,6 +118,9 @@ $(document).ready(function(){
                 if(favorites[i].attr("data-name")===$(this).attr("data-name")){
                     find = favorites[i];
                     delete favorites[find]; //warning- may leave this index of the array undefined
+                    //how to just remove one index of array? seems like it's not possible,
+                    //does an entire new favorites array need to be created every tim, filtering out "undefined" through loops?
+                    console.log(favorites);
                 }
             }
             $(this).attr("data-state", "unfav")
