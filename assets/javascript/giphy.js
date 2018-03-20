@@ -24,7 +24,12 @@ $(document).ready(function(){
     }
 
     function displayGiphy(){
-        $("#show-giphy").empty();
+        for(let i =0; i<10; i++){
+            num = i.toString();
+            term = "#giphy"+i;
+            $(term).empty();
+        }
+        //for loop above empties each giphy-div when new term is clicked to make room for new
         let searchTerm = $(this).attr("data-name");
         let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + apiKey + "&limit=10";
 
