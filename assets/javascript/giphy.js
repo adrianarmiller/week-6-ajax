@@ -33,23 +33,54 @@ $(document).ready(function(){
            method: "GET"
        }).then(function(response) {
            for(let i=0; i <10; i++){
-                let imageUrl = response.data[i].images.original.url;
+                num = i.toString();
+                let imageUrlStill = response.data[i].images.original_still.url;
+                let imageUrlAnimate = response.data[i].images.original.url;
 
                 let ranImage = $("<img>");
     
-                ranImage.attr("src", imageUrl);
+                ranImage.addClass("image");
+                ranImage.attr("src", imageUrlStill);
+                ranImage.attr("data-still", imageUrlStill);
+                ranImage.attr("data-animate", imageUrlAnimate);
+                ranImage.attr("data-state", "still");
+                ranImage.attr("giphy-num", "#giphy"+num);
+                ranImage.attr("rating", response.data[i].rating);
                 ranImage.attr("alt", "random image");
                 ranImage.attr("height", "300px");
                 ranImage.attr("width", "300px");
+
+                let rating = $("<p>");
+                rating.text(response.data[i].rating);
             
-                $("#show-giphy").append(ranImage);
+                $("#giphy"+num).append(rating);
+                $("#giphy"+num).append(ranImage);
+
+
+                //code so giphy appears static but animates once it's clicked
+                //then stlying n ur good 2 go
+                //create favorites section
            }
            console.log(response);
        })
 
     }
 
+    function alterState(){
+
+        let state = $(this).attr("data-state");
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+
+    }
+
    $(document).on("click", ".giphy-search-bttn", displayGiphy);
+   $(document).on("click", ".image", alterState);
    createButtons();
 
 })
