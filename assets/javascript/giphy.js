@@ -34,7 +34,7 @@ $(document).ready(function(){
         }
         //for loop above empties each giphy-div when new term is clicked to make room for new
         let searchTerm = $(this).attr("data-name");
-        let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + apiKey + "&limit=10";
+        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=" + apiKey + "&limit=10";
 
        $.ajax({
            url: queryURL,
