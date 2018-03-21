@@ -41,6 +41,7 @@ $(document).ready(function(){
            method: "GET"
        }).then(function(response) {
            for(let i=0; i <10; i++){
+                console.log(response);
                 num = i.toString();
 
                 let imageUrlStill = response.data[i].images.original_still.url;
@@ -70,9 +71,9 @@ $(document).ready(function(){
                 favImage.attr("width", "20px");
                 favImage.attr("data-name", topics[i]);
                 favImage.attr("data-state", "unfav");
-                ranImage.attr("data-still", imageUrlStill);
-                ranImage.attr("data-animate", imageUrlAnimate);
-                ranImage.attr("rating", response.data[i].rating);
+                favImage.attr("data-still", imageUrlStill);
+                favImage.attr("data-animate", imageUrlAnimate);
+                favImage.attr("rating", response.data[i].rating);
 
                 // let b = $("<button");
                 // b.addClass("add-to-fav-bttn");
@@ -147,7 +148,6 @@ $(document).ready(function(){
         }
         //for loop above empties each giphy-div when fav is clicked to make room for favorites
 
-        //does not display the images currently and i'm unsure why
         for(let i = 0; i<favorites.length & i<10; i++){
                 let num = i.toString();
 
